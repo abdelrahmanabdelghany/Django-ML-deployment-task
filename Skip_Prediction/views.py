@@ -20,20 +20,29 @@ def secondpage(request):
 def resultpage(request):
     if request.method == 'POST':
         Data=list(request.POST.dict().values())
-
-
-        print(Data)
-
-        result=predict(Data)
-        print(result)
-        return render(request,'resultpage.html',{'name':result})
+        if valid(Data) :
+            print(valid(Data))
+            result=predict(Data)
+            return render(request,'resultpage.html',{'name':result})
+        else:     return render(request,'EnterFeaures.html',{'message':'please enter valid values'})
 
 
 
 def predict(Data):
     prediction = model.predict(np.array(Data).reshape(1, -1))
-    print(prediction)
     if prediction==1:
-        return 'song will be skipped'
+        return 'skipped'
     if prediction==0:
-        return 'song wont be skipped'
+        return 'not skipped'
+
+def valid(Data):
+
+    sesseion_lenght=Data[0]
+    end_trackdone=Data[1]
+    if sesseion_lenght=='' or end_trackdone== '':
+        print('empty')
+        return False
+    sesseion_lenght=int(Data[0])
+    end_trackdone=int(Data[1])
+    if sesseion_lenght>0 and end_trackdone in[0,1] :
+        return True

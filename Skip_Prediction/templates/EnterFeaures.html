@@ -1,19 +1,79 @@
-<h1>this is a page where the user enter the need information about the track to predict if its gonna get skipped or not </h1>
-<body>
+{% load static %}
 
-    <form action="/resultpage/" method="POST">
-        <label for="end_trackdone">'end_trackdone':</label>
-        <input type="number" id="end_trackdone" name="end_trackdone"><br><br>
+<!DOCTYPE>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+ Prediction of songs skipped
+</title>
+<style>
+    /* Tooltip container */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    }
+    
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 300px;
+      color: rgb(129, 6, 6);
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+     
+      /* Position the tooltip text - see examples below! */
+      position: absolute;
+      z-index: 1;
+    }
+    
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+    .tooltip .tooltiptext {
+    top: -5px;
+    right: 105%;
+    }
+    </style>
+</head>
+<body  link="#000" style="background-image:url('{% static 'images/pn.jpg'%}'); background-repeat:no-repeat;background-size: cover;"alink="#017bf5" vlink="#000"></body>
 
-        <label for="hist_user_behavior_n_seekfwd">'hist_user_behavior_n_seekfwd':</label>
-        <input type="number" id="hist_user_behavior_n_seekfwd" name="hist_user_behavior_n_seekfwd"><br><br>
+<br />
 
-        <label for="hist_user_behavior_n_seekback">'hist_user_behavior_n_seekback':</label>
-        <input type="number" id="hist_user_behavior_n_seekback" name="hist_user_behavior_n_seekback"><br><br>
+</h3>
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<h1 align="center">
+<font face="Trebuchet MS" style="color:white;" size="7">
+ &nbsp;&nbsp;   Prediction of skipped songs 
 
-
-        <input type="submit" value="Submit" >
+    <form action="/resultpage/" method="POST"  style="display:flex;flex-direction:column;justify-content:center;text-align:center;margin-top: 20px;">
+        
+    <div>
+        <font face="Trebuchet MS" size="5">
+        <label class="tooltip"; alt="please enter an integer" for="session_lenght" ; style="color:white;">session_lenght:   <span class="tooltiptext">please enter an integer</span>
+        </label>
+        <input type="number" id="session_lenght" name="session_lenght"><br><br>
+        </div>
+        <div>
+            <font face="Trebuchet MS" size="5">
+                <label  class="tooltip"; alt="please enter an integer" for="end_trackdone" ; style="color:white;"   >end_trackdone:   <span class="tooltiptext">please enter 0 or 1</span>
+                </label>
+                 
+                <input type="number" id="end_trackdone" name="end_trackdone"><br><br>
+            </div>
+        <div> 
+        <input type="submit" style="color:#000;padding: 10px;border-radius: 8px;font-size: 27px" value="Make Prediction">
+            </div>
+        
     </form>
+    <h2>{{message}} </h2>
 
 
+
+</h1>
+</h3>
 </body>
+</html>

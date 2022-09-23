@@ -1,8 +1,73 @@
-<h1>this is a page were we show model prediction </h1>
-<h2>result is {{name}} </h2>
+{% load static %}
 
-<body>
-    <button onclick="location.href='/'">Return to home page</button>
-    <button onclick="location.href='/EnterFeaures/'">try another sample</button>
+<!DOCTYPE>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>
+ Prediction of songs skipped
+</title>
+<style type="text/css">  
+    .tooltip  
+    {  
+        display: inline;  
+        position: relative;  
+        text-decoration: none;  
+        top: 0px;  
+        left: 4px;  
+    }  
+    .tooltip:hover:after  
+    {  
+        background: #333;  
+        background: rgba(0,0,0,.8);  
+        border-radius: 5px;  
+        top: -5px;  
+        color: #fff;  
+        content: attr(alt);  
+        left: 160px;  
+        padding: 5px 15px;  
+        position: absolute;  
+        z-index: 98;  
+        width: 150px;  
+    }  
+    .tooltip:hover:before  
+    {  
+        border: solid;  
+        border-color: transparent black;  
+        border-width: 6px 6px 6px 0;  
+        bottom: 20px;  
+        content: "";  
+        left: 155px;  
+        position: absolute;  
+        z-index: 99;  
+        top: 3px;  
+    }  
+</style>  
+</head>
+<body  link="#000" style="background-image:url('{% static 'images/pn.jpg'%}'); background-repeat:no-repeat;background-size: cover;"alink="#017bf5" vlink="#000"></body>
+<br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<h1 align="center">
+<font face="Trebuchet MS" style="color:white;" size="7">
 
+ <h2>Model Prediction is {{name}} </h2>
+
+
+   
+
+ <button onclick="location.href='/'" style="color:#000;padding: 10px;font-size: 27px;border-radius: 8px;margin:20px">Return to home page</button>
+ <button onclick="location.href='/EnterFeaures/'" style="color:#000;padding: 10px;font-size: 27px;border-radius: 8px;margin:20px">try another sample</button>
+
+
+<h3 align="center">
+
+<!-- here &nbsp; add spaces-->
+
+<font face="Trebuchet MS" size="4">
+
+
+
+
+</h1>
 </body>
+</html>
